@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Diagnostico A</title>
+    <script>
+        function mostrar(){
+            var numero1= document.getElementById("numero1").value;
+            var numero2= document.getElementById("numero2").value;
+            var numero3= document.getElementById("numero3").value;
+            alert(numero2);
+            var mayor, menor, medio;
+            mayor = numero1;
+            if(numero2 > numero1){
+                mayor = numero2;
+                if(numero1 > numero3){
+                    medio = numero1;
+                    menor = numero3;
+                }else{
+                    menor = numero1;
+                    medio = numero3;
+                }
+            }else if(numero3 > numero1){
+                mayor = numero3;
+                    if(numero2 > numero1){
+                    medio = numero2;
+                    menor = numero1;
+                }else{
+                    menor = numero2;
+                    medio = numero1;
+                }
+            }else{
+
+                if(numero2 > numero3){
+                    medio = numero2;
+                    menor = numero3;
+                }else{
+                    menor = numero2;
+                    medio = numero3;
+                }
+            }
+        document.getElementById("resultado1").innerHTML = mayor; 
+            document.getElementById("resultado2").innerHTML = medio;
+            document.getElementById("resultado3").innerHTML = menor;
+        }
+    </script>
+</head>
+    <body>
+        <h1>Este programa tiene que seleccionar 3 numeros y mostrarlos de mayor a menor</h1>
+        <input type="text" id="numero1">
+        <input type="text" id="numero2">
+        <input type="text" id="numero3">
+        <button onclick="mostrar()">Darle click</button>
+        <p id="resultado1"></p>
+        <p id="resultado2"></p>
+        <p id="resultado3"></p>
+    </body>
+</html>
+

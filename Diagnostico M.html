@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diagnostico M</title>
+		<script> 
+		function mostrar() {
+			var juan = document.getElementById("juan").value;
+			var pedro = document.getElementById("pedro").value;
+			var maria = document.getElementById("maria").value;
+		var total, mayor1, mayor2, resultado1;
+		total = parseInt(maria) + parseInt(juan) + parseInt(pedro);
+		var div;
+		div = total / 50;
+		if(juan > div) {
+			 resultado1 = "Gano juan";
+		}else if(maria > div) {
+			resultado1 = "Gano maria";
+		} else  if (pedro > div){ 
+			resultado1 = "Gano pedro";
+		} else  {	
+			resultado = "Toca una segunda ronda.";
+			if ((maria > juan) && (maria > pedro)) {
+				mayor1 = maria;
+				if(pedro > juan) {
+				mayor2 = pedro;
+				}else {
+ 					mayor2 = juan;
+				}
+			}  else if ((juan > maria) && (juan > pedro)) {
+				mayor1 = maria;
+				if(pedro > maria) {
+				mayor2 = maria;
+				}else {
+ 					mayor2 = pedro;
+				}
+			} else if ((pedro > maria) && (pedro > juan)) {
+				mayor1 = pedro;
+				if(maria > juan) {
+				mayor2 = juan;
+				}else {
+ 				mayor2 = maria;
+				}
+			
+
+	}
+		resultado1 = "Tendremos que ir a segunda ronda "+mayor1+" y " + mayor2 + "son los elegidos para la segunda ronda"; 
+		document.getElementById("resultado").innerHTML = resultado1;	
+}
+}
+
+
+		 </script>
+	</head>
+	<body>
+	<h1>Este pues, es para hacer votaciones, no tiene nada màs.</h1>
+	<label>Juan: </label>
+	<input type="text" id="juan">
+	<label> Pedro: </label>
+	<input type="text" id="pedro">
+	<label> Maria: </label>
+	<input type="text" id="maria">
+	<button onclick="mostrar()" >HOl</button>
+	
+	<p id="resultado"></p> 
+	</body>
+</html>

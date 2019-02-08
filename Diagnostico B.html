@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Diagnostico B</title>
+    <script>
+        function mostrar(){
+            var camisa = 2000;
+            var cantidad;
+            var resultado;
+            var descuento;
+            var camisas;
+            var preciofinal;
+            camisas = document.getElementById("numero1").value;
+            if(camisas === 0){
+                resultado = "No compraste camisas";
+            }else{
+                if(camisas <= 4){
+                    cantidad = (parseInt(camisas))*camisa;
+                    descuento = cantidad*0.125;
+                    preciofinal = cantidad - descuento;
+                    resultado = "Compraste "+camisas+" camisas, sale a un precio de "+cantidad+" y tienes un descuento de "+descuento + " por lo cual pagas "+preciofinal;
+                }else if(camisas <= 8){
+                    cantidad = (parseInt(camisas))*camisa;
+                    descuento = cantidad*0.20;
+                    preciofinal = cantidad - descuento;
+                    resultado = "Compraste "+camisas+" camisas, sale a un precio de "+cantidad+"  y tienes un descuento de "+descuento + " por lo cual pagas "+preciofinal
+                }else{
+                    cantidad = (parseInt(camisas))*camisa;
+                    descuento = cantidad*0.315;
+                    preciofinal = cantidad - descuento;
+                    resultado = "Compraste "+camisas+" camisas, sale a un precio de "+cantidad+"  y tienes un descuento de "+descuento + " por lo cual pagas "+preciofinal
+                }
+                document.getElementById("resultado1").innerHTML = resultado;
+            }
+        }
+    </script>
+</head>
+    <body>
+        <h1>Para comprar camisas con descuentas, cada camisa vale 2000 colones</h1>
+        <input type="text" id="numero1">
+        <button onclick="mostrar()">Darle click</button>
+        <p id="resultado1"></p>
+
+    </body>
+</html>
+

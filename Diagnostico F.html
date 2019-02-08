@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diagnòstico E</title>
+    <script>
+        function mostrar(){
+	var numero = document.getElementById("numero").value;
+	var resultado, dividir, multiplicar, vuelta = "";
+
+	dividir = parseInt(numero) % 10;
+	vuelta = vuelta + dividir;
+	numero = parseInt(numero) * 0.1;
+	dividir = parseInt(numero) % 10;
+	vuelta = vuelta + dividir;
+	numero = parseInt(numero) * 0.1;	
+	dividir = parseInt(numero) % 10;
+        vuelta = vuelta + dividir;
+	alert(vuelta);
+	
+	if ((parseInt(numero)) == (parseInt(vuelta))){
+	document.getElementById("resultado").innerHTML = "El numero es capicùa";
+}else{
+	document.getElementById("resultado").innerHTML = "El numero no es capicua";	
+}
+	 
+}   
+
+</script>
+    </head>
+<body>
+    <h1>Este ejercicio dice si el numero ingresado es capicùa</h1>
+    <label>Inserte un numero de 3 dìgitos</label>
+    <input type="text" id="numero">
+    <button onclick="mostrar()">Ver</button>
+    <p id="resultado"></p>
+    </body>
+</html>

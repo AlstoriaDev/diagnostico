@@ -1,0 +1,33 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Diagnostico B</title>
+    <script>
+        function mostrar(){
+            var horas;
+            horas = document.getElementById("horas").value;
+            var minutos;
+            minutos = document.getElementById("minutos").value;
+            var preciofinal = 0;
+            var horasmultiplicadas;
+            if(minutos > 0){
+                preciofinal = (Number(preciofinal) + 2.5);
+            }
+            horasmultiplicadas = horas * 2.5;
+            preciofinal = parseFloat(preciofinal) + parseFloat(horasmultiplicadas);
+            document.getElementById("resultado1").innerHTML = preciofinal;
+        }
+    </script>
+</head>
+    <body>
+        <h1>Parqueo, cada hora vale 2.5 dolares, si te pasas, ya tienes.</h1>
+        <label>Horas: </label>
+        <input type="text" id="horas">
+        <label>Minutos: </label>
+        <input type="text" id="minutos">
+        <button onclick="mostrar()">Darle click</button>
+        <p id="resultado1"></p>
+
+    </body>
+</html>

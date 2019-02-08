@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diagnostico E</title>
+	<script>
+		function mostrar(){
+			var cantidad = document.getElementById("cantidad").value;
+
+			var preciototal, exceso, resultado;
+			preciototal = cantidad*100;
+
+			if(cantidad > 30){
+				descuento = preciototal*0.15;
+				preciocondescuento = Number(preciototal) - Number(descuento);
+				if(cantidad >= 40){
+					exceso = cantidad / 10;
+					exceso -= 3;
+					resultado = "El precio a pagar en total es " +preciototal+ "pero el descuento es de "+ descuento + " lo cual da un total de "+preciocondescuento+" y como llevas ciertas docenas extras, te regalamos "+exceso+ " productos gratis";
+				}else{
+					resultado = "El precio a pagar en total es " +preciototal+ "pero el descuento es de "+ descuento + " lo cual da un total de "+preciocondescuento;
+				}
+
+			}else{
+				descuento = preciototal*0.10;
+				preciocondescuento = Number(preciototal) - Number(descuento);
+				resultado = "El precio a pagar en total es " +preciototal+ " pero el descuento es de "+ descuento + " lo cual da un total de "+preciocondescuento; 
+			}
+
+			document.getElementById("resultado").innerHTML = resultado;
+
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Página que determina una vara sobre artículos y decenas, bruh.</h1>
+	<label>Cantidad de objetos (100 cada uno): </label>
+	<input id="cantidad">
+	<button onclick="mostrar()">Ver</button>
+	<p id="resultado"></p>
+</body>
+</html>

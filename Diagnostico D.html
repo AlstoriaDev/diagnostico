@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diagnóstico D</title>
+	<script>
+		function mostrar(){
+			var numero = document.getElementById("numero").value;
+			var quettion, resultado;
+			quettion = numero % 2;
+			if(quettion == 0){
+				resultado = "El número ingresado es par";
+			}else{
+				resultado = "El número ingresado es impar"
+			}
+
+			document.getElementById("respuesta").innerHTML = resultado;
+		}
+	</script>
+</head>
+<body>
+	<h1>Este programa va a determinar si el número es par o impar</h1>
+	<input type="text" id="numero">
+	<button onclick="mostrar()">Saber</button>
+	<p id="respuesta"></p>
+</body>
+</html>

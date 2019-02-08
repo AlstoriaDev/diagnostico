@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diagnostico I</title>
+		<script>
+		function mostrar() {
+		var tornillos = document.getElementById("tor").value;
+		var def = document.getElementById("def").value;
+		var div, resultado;
+		if((tornillos > 10000) && (def < 200)) {
+			resultado = "Grado 8";
+		 } else if (tornillos > 10000) {
+			resultado = "Grado 7";		
+		} else if (def < 200)  {
+			resultado = "Grado 6";
+		
+		} else  {
+			resultado = "Grado 5";
+		}
+		
+		document.getElementById("resultado").innerHTML = resultado;
+	 }
+		</script>
+		
+	</head>
+	<body>
+		<h1>Este tiene que poner los tornillos que logro hacer y los que no </h1>
+		<input type="text" id="tor">
+		<input type="text" id="def">
+		<button onclick="mostrar()">XD</button>
+		<p id="resultado"></p>
+	</body>
+</html>

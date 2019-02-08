@@ -1,0 +1,35 @@
+<!Doctype HTML>
+<html>
+<head>
+	<title>Diagnostico G</title>
+	<script>
+	function mostrar(){
+		var dado1 = document.getElementById("numero1").value;
+		var dado2 = document.getElementById("numero2").value;
+		var dado3 = document.getElementById("numero3").value;
+		if((dado1 == 6) && (dado2 == 6) && ( dado3 == 6)){
+			document.getElementById("resultado").innerHTML = "Excelente";
+			return;
+
+		}else if(((dado1 == 6) && (dado2 == 6)) || ((dado2 == 6)&&(dado3 == 6)) || ((dado3 == 6)&&(dado1 == 6))){
+			document.getElementById("resultado").innerHTML = "Muy bien";
+			return;		
+		}else if((dado1 == 6) || (dado2 == 6) || (dado3 == 6)){
+			document.getElementById("resultado").innerHTML = "Regular";
+			return;
+		}else{
+		document.getElementById("resultado").innerHTML = "pesimo"; 		
+}
+	}
+
+	</script>
+</head>
+<body>
+<h1>Ingresa los resultados delos 3 dados que tienes y te dirè que tal</h1>
+<input type="text" id="numero1">
+<input type="text" id="numero2">
+<input type="text" id="numero3">
+<button onclick="mostrar()">click</button>
+<p id="resultado"></p>
+</body>
+</html>

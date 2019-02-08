@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Diagnostico J</title>
+	<script>
+		function mostrar(){
+			var lado1 = document.getElementById("lado1").value;
+			var lado2 = document.getElementById("lado2").value;
+			var lado3 = document.getElementById("lado3").value;
+			var menor1,menor2,mayor, suma;
+			if(lado1 > lado2) {
+				if(lado1 > lado3) {
+					mayor = lado1;
+					menor1= lado2;
+					menor2 = lado3;
+				}else {
+					mayor = lado3;
+					menor1= lado2;
+					menor2 = lado1;
+				}
+				
+			}else if(lado3 > lado2){
+				if(lado3 > lado1) { mayor = lado3; menor1 = lado2; menor2 = lado3; }
+				else  {mayor=lado2; menor1 = lado1; menor2=lado3; }  
+					
+			} else  {
+				if(lado2 > lado1) { mayor = lado2; menor1= lado1; menor2 = lado2;} else  {mayor = lado1; menor1 = lado2; menor2 = lado3;}	
+			}
+	
+			suma = Number(menor1) + Number(menor2);
+			if(mayor < suma) {
+				if((lado1 == lado2) && (lado1 == lado3)) {
+					resultado = "Equilàtero";
+				}else if(((lado1 == lado2) || (lado1 == lado3) || (lado3 == lado2))){
+					resultado = "Isoceles";
+				}else{
+					resultado = "Escaleno";
+				}
+			}else {
+				resultado = "no puede ser un triangulo";
+			}
+		
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Este programa determina si lo que ingresas es un triangulo y que tipo de triangulo es </h1>
+	<input type="text" id="lado1">
+	<input type="text" id="lado2">
+	<input type="text" id="lado3">
+	<button onclick="mostrar()">Ver</button>
+	<p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diagnostico I</title>
+
+	<script>
+	function mostrar(){
+		var nota1 = document.getElementById("nota1").value;
+		var nota2 = document.getElementById("nota2").value;
+		var nota3 = document.getElementById("nota3").value;
+		var nota4 = document.getElementById("nota4").value;
+		var notas = new Array();
+		var menor, posmenor;
+		var promediar = 0, promedio;
+		notas[0] = nota1;
+		notas[1] = nota2;
+		notas[2] = nota3;
+		notas[3] = nota4; 
+		for(var i = 0; i<4 ; i++){
+			menor = notas[0];
+			posmenor = i;
+			if(notas[i] < menor){
+
+			menor = notas[i];
+			posmenor = i;
+			}
+		
+		}
+		for(i = 0; i < 4; i++){
+			if(i != posmenor){
+				promediar = promediar + (parseInt(notas[i]));
+			}
+		}
+		promedio = promediar / 3;
+		document.getElementById("resultado").innerHTML = promedio;
+	}
+	</script>
+</head>
+<body>
+	<h1>Bàsicamente eliminar al peor y promediar a los 3 mejores</h1>
+	<input type="text" id="nota1">
+	<input type="text" id="nota2">
+	<input type="text" id="nota3">
+	<input type="text" id="nota4">
+	<button onclick="mostrar()">Mostrar</button>
+	<p id="resultado"> </p>
+	
+
+</body>
+</html>

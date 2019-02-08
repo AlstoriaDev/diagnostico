@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diagnostico H</title>
+	<script>
+	function mostrar(){
+	var total, iva, pagoporkm, excesode3, excesode1;
+	var kilometros = document.getElementById("monto").value;
+	var impuesto = 0.18;
+	if(kilometros < 300){
+		pagoporkm = kilometros * 30;
+		iva = pagoporkm * impuesto;
+		total = parseFloat(pagoporkm) + parseFloat(iva);
+		resultado = "Usted tiene que pagar: "+pagoporkm+ " pero con impuestos son "+total;
+	}else if(kilometros < 1000){
+		pagoporkm = kilometros * 30;
+		excesode3 = Number(kilometros) - 300;
+		excesode3 = excesode3 * 0.15;
+		iva = pagoporkm * impuesto;
+		total = parseFloat(pagoporkm) + parseFloat(iva);
+		resultado = "usted tiene que pagar: "+pagoporkm+" pero con impuestos son "+total+" y por pasarse de 300km se suma "+excesode3;
+	}else{
+		pagoporkm = kilometros * 30;
+		excesode3 = Number(kilometros) - 300;
+		excesode3 = excesode3 * 0.15;
+		excesode1 = Number(kilometros) - 1000;
+		excesode1 = excesode1 * 0.10;
+		
+		iva = pagoporkm * impuesto;
+		total = parseFloat(pagoporkm) + parseFloat(iva);
+		resultado = "usted tiene que pagar: "+pagoporkm+" pero con impuestos son "+total+" y por pasarse de 300km se suma "+excesode3+" y tambièn por pasarse de 1000 una suma de "+excesode1;
+		}
+	document.getElementById("resultado").innerHTML = resultado;
+	}
+	</script>
+</head>
+
+
+<body>
+	<h1>Este algoritmo calcula una empresa de prestamo de carros </h1>
+	<label>Km de uso:</label>
+	<input type="text" id="monto">
+	<button onclick="mostrar()">Ver</button>
+	<p id="resultado"></p> 
+</body>
+</html>
